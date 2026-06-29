@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Шаракова Леся — штукатурные работы 20+ лет</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Segoe UI', serif;
+            background: #f6f4f0;
+            color: #1f1e1b;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 48px 48px 32px 32px;
+            padding: 2.5rem 2.5rem 3rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+            border: 1px solid #e8e3da;
+        }
+        /* шапка */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #d4c9b8;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .name {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #1a1815;
+        }
+        .name span {
+            color: #a67c52;
+            font-weight: 400;
+        }
+        .exp {
+            background: #a67c52;
+            color: #fff;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        /* описание */
+        .sub {
+            font-size: 1.25rem;
+            color: #4a443c;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            border-left: 6px solid #a67c52;
+            padding-left: 1.2rem;
+        }
+        .tagline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .tagline-item {
+            background: #f0ede7;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #2c2822;
+            font-weight: 500;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin: 2rem 0;
+        }
+        .grid-2col div {
+            background: #f8f6f2;
+            padding: 0.9rem 1.2rem;
+            border-radius: 18px;
+            border: 1px solid #e3ddd2;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .grid-2col div span {
+            font-size: 1.5rem;
+        }
+        .big-message {
+            background: #f3efe8;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0;
+            border-left: 8px solid #a67c52;
+        }
+        .big-message p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #2c2822;
+        }
+        .big-message strong {
+            color: #7a5d3c;
+        }
+        .price-block {
+            background: #1f1e1b;
+            color: #f0ede7;
+            padding: 1.8rem 2rem;
+            border-radius: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        .price-block .label {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        .price-block .value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #e4c9a5;
+        }
+        .price-block .note {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+        .btn-wa {
+            display: block;
+            background: #25D366;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.3rem;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 60px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: 0.2s;
+            box-shadow: 0 8px 0 #1a8f47;
+        }
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 0 #1a8f47;
+        }
+        .btn-wa:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #1a8f47;
+        }
+        .footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e3ddd2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            color: #6b6358;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #7a5d3c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .insta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #f0ede7;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            color: #1f1e1b;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #d4c9b8;
+        }
+        @media (max-width: 600px) {
+            .card { padding: 1.5rem; }
+            .name { font-size: 1.8rem; }
+            .grid-2col { grid-template-columns: 1fr; }
+            .price-block { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <!-- шапка -->
+        <div class="header">
+            <div class="name">Шаракова <span>Лейсан</span></div>
+            <div class="exp">⭐ 20+ лет опыта</div>
+        </div>
+
+        <!-- слоган -->
+        <div class="sub">
+            Штукатурные работы «под ключ» — от черновой стены до дизайнерского покрытия
+        </div>
+
+        <!-- теги -->
+        <div class="tagline">
+            <span class="tagline-item">🏠 Частные дома</span>
+            <span class="tagline-item">🏢 Квартиры / офисы</span>
+            <span class="tagline-item">🌆 Фасады</span>
+            <span class="tagline-item">🛠️ Лепнина / молдинги</span>
+        </div>
+
+        <!-- виды работ (с иконками) -->
+        <div class="grid-2col">
+            <div><span>🧱</span> Штукатурка (цементная, гипсовая)</div>
+            <div><span>🪞</span> Венецианская штукатурка</div>
+            <div><span>🌾</span> Короед / барашек / фактурные</div>
+            <div><span>🎨</span> Шпаклёвка под покраску / обои</div>
+            <div><span>🖌️</span> Грунтовка / армирование</div>
+            <div><span>📐</span> Выравнивание стен / потолков</div>
+            <div><span>🪚</span> Монтаж лепного декора</div>
+            <div><span>🧪</span> Подбор материалов и колеровка</div>
+        </div>
+
+        <!-- важный блок про качество -->
+        <div class="big-message">
+            <p>
+                <strong>Более 20 лет</strong> делаю ремонт, который держится десятилетиями. 
+                Работаю с <strong>немецкими и итальянскими материалами</strong> (Ceresit, Knauf, Weber, Caparol). 
+                Даю гарантию на все виды работ. <br /><br />
+                📍 <strong>Работаю в Казани и по Республике Татарстан</strong>. Выезд на замер — <strong>бесплатно</strong>.
+            </p>
+        </div>
+
+        <!-- стоимость -->
+        <div class="price-block">
+            <div>
+                <div class="label">💸 Стоимость работ (материалы + работа)</div>
+                <div class="value">от 1 200 ₽ / м²</div>
+            </div>
+            <div class="note">✏️ точная смета после замера</div>
+        </div>
+
+        <!-- кнопка WhatsApp -->
+        <a href="https://wa.me/79172669250" target="_blank" class="btn-wa">
+            📲 Написать в WhatsApp
+        </a>
+        <p style="text-align:center; margin: 0.8rem 0 0; color:#6b6358; font-size:0.95rem;">
+            или позвоните по номеру <strong style="color:#1f1e1b;">+7 (917) 266-92-50</strong>
+        </p>
+
+        <!-- подвал -->
+        <div class="footer">
+            <span>© 2026 · Шаракова Лейсан</span>
+            <a href="https://instagram.com/sharakovalesan" target="_blank" class="insta-link">
+                📸 Instagram @sharakovalesan
+            </a>
+            <span style="color:#b0a89b;">crate: uglykarman#116</span>
+        </div>
+
+    </div>
+</body>
+</html>
